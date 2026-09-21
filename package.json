@@ -1,0 +1,61 @@
+{
+  "name": "directus-extension-jev",
+  "version": "0.1.0",
+  "description": "Native Directus Flow operation for versioned Jev decisions with server-side credentials.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gbesse/directus-extension-jev.git"
+  },
+  "files": [
+    "src",
+    "nodes",
+    "app.js",
+    "api.js",
+    "packs",
+    "examples",
+    "element-templates",
+    "README.md",
+    "LICENSE",
+    "docs"
+  ],
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "check": "node scripts/check.mjs",
+    "typecheck": "tsc --noEmit --skipLibCheck --strict --target ES2022 --module NodeNext docs/public-api-types.mts",
+    "demo": "node examples/demo.mjs"
+  },
+  "dependencies": {
+    "@gbesse/decisionpacks": "git+https://github.com/gbesse/decisionpacks.git#3c90b6e667c16653b9a6ae00b376df9bddbd8461"
+  },
+  "devDependencies": {
+    "@directus/extensions": "4.0.4",
+    "typescript": "5.9.3"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/index.d.mts",
+      "import": "./src/index.mjs"
+    }
+  },
+  "directus:extension": {
+    "type": "operation",
+    "path": {
+      "app": "app.js",
+      "api": "api.js"
+    },
+    "source": {
+      "app": "app.js",
+      "api": "api.js"
+    },
+    "host": "^11.0.0"
+  },
+  "overrides": {
+    "js-yaml": "4.3.2",
+    "joi": "18.2.9"
+  }
+}
