@@ -20,6 +20,10 @@ In a Flow, add **Jev decision**. Paste `packs/support-triage.json` into **Decisi
 
 Keys are server-only. Do not place them in Flow options. Network/model/validation failures reject the operation so Directus can follow its rejection path. The fallback outcome is an ordinary valid decision and must be routed explicitly. State is sent to Typesafe when using the live provider.
 
+## Shareable demo report
+
+Run `npm run demo:report` to capture this repository’s bundled example as one JSON object with the project purpose, version and complete demo output. The command fails if the demo fails, so the report is useful when sharing a reproducible first look or reporting unexpected behavior. The bundled demo’s data and safety boundaries still apply.
+
 ## Verification
 
 ```sh
